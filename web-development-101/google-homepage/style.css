@@ -1,0 +1,542 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+* {
+    /* border: 1px solid black; */
+    margin: 0;
+    padding: 0;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+    font-family: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+
+    line-height: 1.58;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+/* Logo, Searchbar and 2 icons on the right */
+
+#searchform {
+    position: relative;
+    display: flex;
+    
+    margin: 20px 20px 8px;
+    
+    align-items: center;
+}
+
+#logo {
+    margin-right: 45px;
+
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#logo > span:nth-child(1) {
+    color: #4285F4;
+}
+
+#logo > span:nth-child(2) {
+    color: #EA4335;
+}
+
+#logo > span:nth-child(3) {
+    color: #FBBC05;
+}
+
+#logo > span:nth-child(4) {
+    color: #4285F4;
+}
+
+#logo > span:nth-child(5) {
+    color: #34A853;
+}
+
+#logo > span:nth-child(6) {
+    color: #EA4335;
+}
+
+#logo > span:nth-child(7) {
+    color: #FBBC05;
+}
+
+#search-query-holder {
+    display: flex;
+
+    min-width: 690px;
+
+    justify-content: space-between;
+
+    border: 1px solid lightgray;
+    border-radius: 30px;
+}
+
+#search-query-holder:hover {
+    box-shadow: 0px 1px 2.5px 1px lightgray; 
+}
+
+#search-query {
+    margin-left: 20px;
+    padding: 13px;
+
+    width: 85%;
+    
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+
+    border: none;
+}
+
+#searchform button {
+    background-repeat: no-repeat;
+    background-position: center;
+
+    cursor: pointer;
+
+    border: none;
+}
+
+#search-query-holder > button {
+    flex: 1 0;
+}
+
+#clear-search-btn {
+    background: url("images/clear-search-icon.png")
+}
+
+#do-search-btn {
+    margin-right: 5px;
+
+    background: url("images/search-icon.png")
+}
+
+#voice-search-btn {
+    margin-left: 15px;
+
+    min-width: 48px;
+    min-height: 48px;
+
+    background: url("images/voice-search-icon.png");
+
+    border-radius: 40%;
+}
+
+#voice-search-btn:hover {
+    background:
+    linear-gradient(rgba(100, 100, 100, 0.1), rgba(100, 100, 100, 0.1)),
+    url("images/voice-search-icon.png");
+}
+
+#apps-btn {
+    position: absolute;
+    right: 45px;
+}
+
+
+#account-btn {
+    position: absolute;
+    right: 0;
+}
+
+@media(max-width: 1050px){
+    #apps-btn,
+    #account-btn {
+        visibility: hidden;
+    }
+}
+
+/* Toolbar */
+
+#toolbar {
+    display: flex;
+
+    /* Aligning toolbar to search query using padding-left */
+    /* Not the perfect way to align things but for this project will do */
+    padding-left: 170px;
+
+    align-items: center;
+
+    border-bottom: 1px solid #DFDFDF;
+}
+
+.toolbar-btn {
+    padding: 16px 12px 12px 13px;
+
+    display: flex;
+
+    align-items: center;
+
+    cursor: pointer;
+    
+    border: none;
+}
+
+.toolbar-btn > p {
+    display: inline; 
+
+    margin-left: 6px;
+
+    font-size: 13px;
+
+    color: #777;
+}
+
+.toolbar-btn:first-child{
+
+    /* Lower padding to compensate for 3px border so that all toolbar buttons are aligned */
+    /* Not the best implementation */
+    padding-bottom: 10px;
+
+    border-bottom: 3px solid #4285F4;
+}
+
+.toolbar-btn:nth-child(-n+6):hover {
+    padding-bottom: 10px;
+    border-bottom: 3px solid #4285F4;
+}
+
+.toolbar-btn:nth-child(7) {
+    margin-left: 80px;
+}
+
+.toolbar-btn:nth-child(8) {
+    padding-left: 6px;
+}
+
+/* Search results */
+
+#search-results {
+    margin-left: 180px;
+}
+
+#search-results > p:first-child {
+    font-size: 14px;
+    line-height: 43px;
+
+    color: #70757a;
+}
+
+.search-result {
+    margin-bottom: 28px;
+
+    display: flex;
+
+    width: 600px;
+
+    flex-direction: column;
+}
+
+.search-link > p:first-child {
+    padding-top: 6px;
+
+    font-size: 14px;
+    line-height: 1.3;
+
+    color: #202124;
+}
+
+.search-link > p:first-child > span {
+    color: #5f6368;
+}
+
+.search-link > p:nth-child(2) {
+    padding: 4px 0 3px 0;
+    
+    font-size: 20px;
+    line-height: 1.3;
+
+    color: #1a0dab;
+}
+
+.search-link:hover > p:nth-child(2) {
+    text-decoration: underline;
+}
+
+.search-description {
+    font-size: 14px;
+
+    color: #4d5156;
+}
+
+.search-result-subsections {
+    display: grid;
+
+    margin-top: 10px;
+    margin-left: 22px;
+
+    row-gap: 10px;
+
+    grid-template-columns: 1fr 1fr;
+}
+
+/* For this CSS could've reused some css from .search-result classes if HTML was structured differently, like using two classes on one element */
+
+.search-result-subsections > a {
+    font-size: 14px;
+    line-height: 1.2;
+
+    color: #1a0dab;
+}
+
+.search-result-subsections > a:hover {
+    text-decoration: underline;
+}
+
+.search-result-sub > a {
+    padding: 4px 0 3px 0;
+
+    font-size: 20px;
+    line-height: 1.3;
+
+    color: #1a0dab;
+}
+
+.search-result-sub > a:hover {
+    text-decoration: underline;
+}
+
+.search-result-sub > p {
+    width: 220px;
+
+    font-size: 14px;
+
+    color: #4d5156;
+}
+
+/* Video Results */
+
+.search-result-videos {
+    margin-bottom: 40px;
+
+    display: flex;
+
+    width: 600px;
+
+    justify-content: space-between;
+}
+
+.video-result {
+    margin: 4px;
+
+    display: flex;
+
+    flex: 1 0;
+
+    flex-direction: column;
+
+    border: 1px solid #dfe1e5;
+    border-radius: 8px;
+}
+
+.video-result > a > p {
+    padding: 16px 16px 0 16px;
+
+    height: 6.875em;
+
+    font-size: 16px;
+    line-height: 1.3;
+
+    color: #1a0dab;
+}
+
+.video-result > a:hover > p {
+    text-decoration: underline;
+}
+
+.video-result > p:nth-child(2),
+.video-result > p:nth-child(3) {
+    padding: 0 16px;
+
+    font-size: 14px;
+    line-height: 1.5800000429153442em;
+
+    color: #808080;
+}
+
+.video-result > p:nth-child(3) {
+    padding-bottom: 11px;
+}
+
+.video-result > p:nth-child(3) > span {
+    color: #202124;
+}
+
+/* Search Related */
+
+.search-related > p {
+    padding: 0 0px 12px;
+
+    font-size: 20px;
+    line-height: 1.3;
+
+    color: #222;
+}
+
+.related-searches {
+    width: 500px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+}
+
+.related-searches > a {
+    padding: 3px 32px 3px 0;
+
+    font-size: 14px;
+    line-height: 20px;
+    
+    color: #1a0dab;
+}
+
+.related-searches > a:hover {
+    text-decoration: underline;
+}
+
+/* Search Pages */
+
+#search-pages {
+    margin: 30px 0 30px 350px;
+
+    font-size: 14px;
+    text-align: center;
+
+    color: #4285f4;
+}
+
+#search-pages span {    
+    display: block;
+
+    width: 20px;
+
+    font-size: 34px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#search-pages td:hover {
+    cursor: default;
+}
+
+#search-pages td:nth-child(5) > p {
+    color: #000;
+}
+
+#search-pages td:nth-child(n+6):nth-child(-n+14):hover,
+#search-pages td:last-child:hover {
+    cursor: pointer;
+}
+
+#search-pages td:nth-child(n+6):nth-child(-n+14):hover p,
+#search-pages td:last-child:hover p {
+    text-decoration: underline;
+}
+
+#search-pages td:last-child span {
+    padding-left: 15px;
+    /* Making arrow to the right smaller doesn't really work with this setup */
+    /* font-size: 14px; */
+}
+
+#search-pages td:last-child p {
+    padding-left: 15px;
+}
+
+#search-pages td:nth-child(1) > span {
+    color: #4285F4;
+}
+
+#search-pages td:nth-child(2) > span {
+    color: #EA4335;
+}
+
+#search-pages td:nth-child(3) > span {
+    color: #FBBC05;
+}
+
+#search-pages td:nth-child(4) > span {
+    color: #4285F4;
+}
+
+#search-pages td:nth-child(5) > span {
+    color: #34A853;
+}
+
+#search-pages td:nth-child(n+6):nth-child(-n+14) > span {
+    color: #FBBC05;
+}
+
+#search-pages td:nth-child(15) > span {
+    color: #4285F4;
+}
+
+#search-pages td:nth-child(16) > span {
+    color: #34A853;
+}
+
+/* Footer */
+
+footer {
+    font-size: 14px;
+    line-height: 40px;
+
+    background: #f2f2f2;
+
+    color: #5f6368;
+
+    border-top: 1px solid #e4e4e4;
+}
+
+footer p {
+    display: inline;
+}
+
+footer a {
+    color: #5f6368;
+}
+
+footer a:hover {
+    color: #222;
+}
+
+footer span {
+    font-weight: bold;
+
+    color: #333;
+}
+
+#location {
+    border-bottom: 1px solid #e4e4e4;
+}
+
+#location p:first-child {
+    padding-right: 13px;
+    
+    font-size: 15px;
+
+    border-right: 1px solid #e4e4e4;
+}
+
+#location p:nth-child(2) {
+    padding-left: 16px;
+}
+
+#location, #footer-links {
+    padding-left: 180px;
+}
+
+#footer-links > a {
+    padding-right: 27px;
+}
