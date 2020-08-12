@@ -12,3 +12,5 @@ Many of CSS lines are repeated for different selectors so that could've been als
 Overall I can conclude that I should've better structured my HTML to then be able to easily align items using CSS with not too much repetition.
 
 Also disregard all text on the page.
+
+[GitHub Pages link](https://shadou1.github.io/the-odin-projects/web-development-101/google-search-results-page/)
