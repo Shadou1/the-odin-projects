@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="wrapper">
+
+        <section class="container">
+
+            <div id="announcement">
+                <p>Begin by selecting your choice.</p>
+            </div>
+
+            <div id="choices">
+        
+                <div class="choice">
+                    <div>
+                        <p class='choice-player'></p>
+                    </div>
+                    <button class="choice-button" data-choice='rock'>
+                        <img class="choice-img" src="images/Rock.png" alt="rock">
+                    </button>
+                    <div>
+                        <p class='choice-computer'></p>
+                    </div>
+                </div>
+        
+                <div class="choice">
+                    <div>
+                        <p class='choice-player'></p>
+                    </div>
+                    <button class="choice-button" data-choice='paper'>
+                        <img class="choice-img" src="images/Paper.png" alt="paper">
+                    </button>
+                    <div>
+                        <p class='choice-computer'></p>
+                    </div>
+                </div>
+        
+                <div class="choice">
+                    <div>
+                        <p class='choice-player'></p>
+                    </div>
+                    <button class="choice-button" data-choice='scissors'>
+                        <img class="choice-img" src="images/Scissors.png" alt="scissors">
+                    </button>
+                    <div>
+                        <p class='choice-computer'></p>
+                    </div>
+                </div>
+        
+            </div>
+        
+            <div id="info">
+        
+                <label for="round">Round №</label>
+                <input type="text" name="round" id="round" readonly>
+                <label for="score">Score</label>
+                <input type="text" name="score" id="score" readonly>
+        
+            </div>
+
+            <div id="final">
+                <p id="round-result"></p>
+                <button id="restart-btn">Play again?</button>
+            </div>
+
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
