@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etch-A-Sketch</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="wrapper">
+
+        <header>Etch A Sketch</header>
+
+        <div id="toolbar">
+
+            <div id="color-pickers">
+
+                <div>
+                    <label for="color-pen">Pen:</label>
+                    <input type="color" id="button-color-pen"
+                        name="color-pen" value="#e66465">
+                    </input>
+                </div>
+    
+                <div>
+                    <label for="color-background">Background:</label>
+                    <input type="color" id="button-color-background"
+                        name="color-background" value="#DDDDDD">
+                    </input>
+                </div>
+
+            </div>
+
+            <div id="pen-picker">
+
+                <label for="pen">Pen style:</label>
+                <select name="pen" id="pen-selector">
+                    <option value="plain-pen">Plain Pen</option>
+                    <option value="rainbow-pen">Rainbow Pen</option>
+                    <option value="shading-pen">Shading Pen</option>
+                </select>
+
+            </div>
+
+            <button id="button-clear">Clear</button>
+            <button id="button-grid">Show Grid</button>
+            <button id="button-new">New sketch</button>
+
+        </div>
+
+        <div id="sketch-container">
+
+            <!-- Inner wrapper for actual content -->
+            <div id="sketch-wrapper">
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

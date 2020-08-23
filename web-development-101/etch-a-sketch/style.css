@@ -1,0 +1,146 @@
+* {
+    /* border: 1px solid black; */
+
+    margin: 0;
+    padding: 0;
+
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 10px;
+    
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 2rem;
+}
+
+/* ===============
+   Common Elements
+   =============== */
+
+button {
+    font-size: 2rem;
+}
+
+header {
+    text-align: center;
+}
+
+/* =============
+   Outer Wrapper
+   ============= */
+
+.wrapper {
+    margin: 10px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+@media(min-width: 768px) {
+    .wrapper {
+        margin: 10px 20px;
+    }
+}
+
+/* =======
+   Toolbar
+   ======= */
+
+#toolbar {
+    margin: 10px auto;
+
+    display: flex;
+
+    flex-wrap: wrap;
+    justify-content: center;
+
+    /* align-items: stretch; */
+}
+
+#toolbar > button {
+    margin: 5px;
+}
+
+#color-pickers, #pen-picker {
+    margin: 5px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+}
+
+#color-pickers > div {
+    display: flex;
+
+    justify-content: flex-end;
+}
+
+/* ================
+   Sketch Container
+   ================ */
+
+#sketch-container {
+    margin: 0 auto;
+
+    position: relative;
+
+    /* Will be manually setting width to the lowest dimension in javascript*/
+    width: 100%;
+
+    background-color: lightgrey;
+
+    user-select: none;
+}
+
+/* Wierd way to keep square aspect ratio without using javascript */
+/* By changing padding-top we can change aspect ratio */
+#sketch-container::before {
+    content: "";
+    display: block;
+
+    /* Will be manually changing this to set aspect ratio so that */
+    /* grid-cells are square */
+
+    /* For now though we won't be changing it because keeping cells square
+       in very uneven width / height sketchpads will create very
+       wide or long sketchpads which will look very small */
+    padding-top: 100%;
+}
+
+/* Wierd way to make content appear inside #sketch-container because of */
+/* #sketch-container::before > padding-top being 100% */
+#sketch-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.grid-row {
+    display: flex;
+    
+    flex: 1 0;
+}
+
+.grid-cell {
+    flex: 1 0;
+}
+
+.show-grid-sketch {
+    border-left: 1px solid gray;
+    border-top: 1px solid gray;
+}
+
+.show-grid-cell {
+    border-right: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
