@@ -2,7 +2,7 @@
 
 Pretty happy with how this turned out. It was fun figuring out how to make everything work.
 
-### I decided to implement this project with these two main ideas in mind:
+### I decided to implement this project with these three main ideas in mind:
 1. Sketchpad cells will be square
 1. Sketchpad will automatically resize depending on browser's window size
 1. Entire sketchpad will always be visible without needing to scroll the page
